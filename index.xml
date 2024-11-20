@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package version="1210">
+	<kit name="SceneConverter_v1" restart="YES">
+		<source target="SceneConverter_v1/index.cfg">index.cfg</source>
+		<source target="SceneConverter_v1/README.md">README.md</source>
+		<source target="SceneConverter_v1/lxserv/scene_converter.py">lxserv/scene_converter.py</source>
+		<source target="SceneConverter_v1/Configs/scene_converter.cfg">Configs/scene_converter.cfg</source>
+		<source target="SceneConverter_v1/images/scene_converter.png">images/scene_converter.png</source>
+	</kit>
+	<message button="Help">SceneConverter_v1 Kit installation complete.</message>
+</package>
