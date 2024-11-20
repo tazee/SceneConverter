@@ -226,6 +226,7 @@ class SceneConverter_Cmd(lxu.command.BasicCommand):
 
         elif os.path.isdir(self.srcFolder):
             for curdir, dirs, files in os.walk(self.srcFolder):
+                print('** curdir ({}) srcFolder ({})'.format(curdir, self.srcFolder))
                 for file in files:
                     if file.endswith(srcExtention):
                         srcFilePath = os.path.join(curdir, file)
@@ -233,12 +234,12 @@ class SceneConverter_Cmd(lxu.command.BasicCommand):
                         if curdir == self.srcFolder:
                             dstDirname = self.dstFolder
                         else:
-                            relPath = os.path.relpath(self.srcFolder, curdir)
+                            relPath = os.path.relpath(curdir,self.srcFolder)
                             dstDirname = os.path.join(self.dstFolder, relPath)
-                        '''
-                            Make the destination directories
-                        '''
-                        pathlib.Path(dstDirname).mkdir(parents=True, exist_ok=True)
+                            # Make the destination directories
+                            pathlib.Path(dstDirname).mkdir(parents=True, exist_ok=True)
+
+                        # Make new file path on destination folder
                         newFilePath = os.path.join(dstDirname, dstFilename)
 
                         ok = self.ConvertScene(srcFilePath, newFilePath, dstFormat, dstDirname)
