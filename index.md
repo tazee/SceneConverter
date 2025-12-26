@@ -5,17 +5,21 @@ This is a Python script to convert scene files to other format for Foundry 3DCG 
 これは3DCGアプリケーションのModoで保存されているシーンファイルを一括して他のフォーマットに変換して保存するPythonスクリプトです。変換元のフォルダーに保存されている複数のシーンファイルを一括で指定した保存先のフォルダーに変換したい時に便利です。スクリプトは変換元のフォルダーとその下層にある変換元のシーンファイルを検索し、変換先のフォルダーの下に同じ階層構造で変換したシーンファイルを保存します。このキットにはPythonスクリプトで書かれた**scene.converter**というModoのコマンドが含まれており、Modoの全てのプラットフォームで動作します (macOS, Windows and Linux)。
 
 ## Installation
-Drag and drop SceneConverter_v1.lpk file on Modo viewport. You can see "SceneConverter_v1 Kit installation complete." if the installation is succesfull. The kit is installed in Modo User Folder.
+Drag and drop SceneConverter.lpk file on Modo viewport. You can see "SceneConverter Kit installation complete." if the installation is succesfull. The kit is installed in Modo User Folder.
 
-SceneConverter_v1.lpkをModoのビューポートにドラッグ&ドロップしてください。インストールが成功すると"SceneConverter_v1 Kit installation complete."というメッセージが表示されます。
+SceneConverter.lpkをModoのビューポートにドラッグ&ドロップしてください。インストールが成功すると"SceneConverter Kit installation complete."というメッセージが表示されます。
 
 ## How to Run
-Type **scene.converter** on command filed of Command History viewport. You can see the following command panel.
+The **scene.converter** command dialog can be displayed by clicking the scene.converter icon in the Kits icon in the upper right corner of the screen.
 
-コマンド履歴のビューポートのコマンド入力フィールドで**scene.converter**をタイプしてください。下記のようなコマンドパネルが表示されます。
+**scene.converter** コマンド ダイアログは、画面の右上隅にあるキット アイコン内の scene.converter アイコンをクリックすると表示できます。
 
 <div align="left">
-<img src="./images/scene_converter.png" style='max-height: 500px; object-fit: contain'/>
+<img src="images/UI.png" style='max-height: 620px; object-fit: contain'/>
+</div>
+<br>
+<div align="left">
+<img src="images/scene_converter.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 ## Options

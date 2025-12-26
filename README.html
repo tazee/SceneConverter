@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="scene-converter-for-modo">Scene Converter for Modo</h1>
+<p>This is a Python script to convert scene files to other format for Foundry 3DCG application Modo. This is useful if you want to convert multiple scene files saved in a source folder to other destination folders in bulk. It scans source scenes files under sub-folders of the source folder and saves the converted scene files to maintain the same hierarchies. This kit contains a Modo command (<strong>scene.converter</strong>) written by Python script and it works on all Modo platforms (macOS, Windows and Linux).</p>
+<p>これは3DCGアプリケーションのModoで保存されているシーンファイルを一括して他のフォーマットに変換して保存するPythonスクリプトです。変換元のフォルダーに保存されている複数のシーンファイルを一括で指定した保存先のフォルダーに変換したい時に便利です。スクリプトは変換元のフォルダーとその下層にある変換元のシーンファイルを検索し、変換先のフォルダーの下に同じ階層構造で変換したシーンファイルを保存します。このキットにはPythonスクリプトで書かれた<strong>scene.converter</strong>というModoのコマンドが含まれており、Modoの全てのプラットフォームで動作します (macOS, Windows and Linux)。</p>
+<h2 id="installation">Installation</h2>
+<p>Drag and drop SceneConverter.lpk file on Modo viewport. You can see &quot;SceneConverter Kit installation complete.&quot; if the installation is succesfull. The kit is installed in Modo User Folder.</p>
+<p>SceneConverter.lpkをModoのビューポートにドラッグ&amp;ドロップしてください。インストールが成功すると&quot;SceneConverter Kit installation complete.&quot;というメッセージが表示されます。</p>
+<h2 id="how-to-run">How to Run</h2>
+<p>The <strong>scene.converter</strong> command dialog can be displayed by clicking the scene.converter icon in the Kits icon in the upper right corner of the screen.</p>
+<p><strong>scene.converter</strong> コマンド ダイアログは、画面の右上隅にあるキット アイコン内の scene.converter アイコンをクリックすると表示できます。</p>
+<div align="left">
+<img src="images/UI.png" style='max-height: 620px; object-fit: contain'/>
+</div>
+<br>
+<div align="left">
+<img src="images/scene_converter.png" style='max-height: 500px; object-fit: contain'/>
+</div>
+<h2 id="options">Options</h2>
+<ul>
+<li><strong>Source Folder or File</strong>:<br>
+Set the source folder name which contains scene files to be converted. You can set a sigle scene filename instead of folder name if you want to convert a single scene file.<br>
+変換元のシーンファイルがあるフォルダー名称を指定します。単一のシーンファイルを変換したい場合は、シーンファイル名称を指定することもできます。</li>
+<li><strong>Source Format</strong>:<br>
+Set the scene file format for the source scene files to be converted. SceneConverter scans all scene files with the extension in the source folder and the sub-folders.<br>
+変換元のシーンファイルフォーマットを指定します。シーンコンバーターは指定したフォーマットの拡張子を持つシーンファイルを変換元のフォルダーとそのサブフォルダーから検索します。</li>
+<li><strong>Destination Folder</strong>:<br>
+Set the destination folder name to save converted scene files. If the destination folder is not existed, SceneConverter automatically creates new folders.<br>
+変換したシーンファイルを保存する変換先のフォルダー名称を指定します。もし変換先フォルダーが存在しない灰は、自動的にフォルダーが作成されます。</li>
+<li><strong>Destination Format</strong>:<br>
+Set the scene file format for target scene files.<br>
+変換先のシーンファイルフォーマットを指定します。</li>
+<li><strong>Copy Images</strong>:<br>
+Copy images in the source scene where the same folder with the converted scene file.<br>
+シーンファイルで使用されている画像ファイルを変換したシーンファイルと同じフォルダにコピーします。</li>
+<li><strong>Make Log File</strong>:<br>
+Make log file with the list of converted files when this option is enabled.<br>
+このオプションを有効にすると変換したファイルの一覧が書かれたログファイルが作成されます。</li>
+<li><strong>Log File</strong>:<br>
+Filename of the log file. The log file is created on the destination folder.<br>
+ログファイルのファイル名称を指定します。ログファイルは変換先フォルダーに作られます。</li>
+<li><strong>Comment</strong>:<br>
+Write your memo as single string.<br>
+ログファイルに書き込んでおきたいメモを文字列として設定することができます。</li>
+</ul>
+
+</body>
+</html>
