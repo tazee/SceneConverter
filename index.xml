@@ -10,6 +10,7 @@
 		<source target="SceneConverter/images/scene_converter.png">images/scene_converter.png</source>
 		<source target="SceneConverter/images/icon_32.png">images/icon_32.png</source>
 		<source target="SceneConverter/images/icon_20.png">images/icon_20.png</source>
+		<source target="SceneConverter/images/UI.png">images/UI.png</source>
 	</kit>
 	<message button="Help">SceneConverter Kit installation complete.</message>
 </package>
